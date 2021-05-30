@@ -1,11 +1,11 @@
 # Installation process
 
-Prerequisites: docker, docker-compose, node, yarn
+Prerequisites: docker, node, yarn
 
 ## Steps
 ### In project root create the mysql container 
 ```
-docker-compose up -d
+docker compose up
 ```
 
 ### make sure mysql is running
@@ -16,14 +16,14 @@ sh init-mysql.sh
 
 #### Note: In mysql hr db should have employees table with 1 row by now.
 
-### initiate server on localhost::3000
+### initiate server on http://localhost:3000
 ```
 cd server
 yarn install
 yarn serve
 ```
 
-### initiate client on localhost::8080
+### initiate client on http://localhost:8080
 ```
 cd ../client  # {rootDirectory}/client
 yarn install
@@ -34,6 +34,13 @@ Admin account
 ```
 email: admin@test.com
 password: admin123
+```
+
+### Cypress test
+```
+cd ./client  
+yarn test:e2e
+
 ```
 
 # Work Explanation
